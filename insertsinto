@@ -1,0 +1,59 @@
+insert into chef(ceduchef,nomchef,telechef, titulos, experienchef) values
+('1353534664','Mero Lucas Patricio','53675456','Chef Profesional','Muy buena'),('1304649942','Lopez Ortiz Ana','45522445','Master en Cocina','Muy buena'),
+('1304659901','Zamabrano Loor Pedro','57425655','Chef Profesional','Muy buena'),('1315593402','Espinal Rosado Patricia','77366443','Chef Profesional','Excelente'),
+('1315609300','Ponce Macias Esther','77523332','Chef Profesional','Muy buena'),('1310604934','Erazo Mejia Carlos','54439942','Chef Profesional','Muy buena');
+
+
+insert into bodega(codibodega,producentrega,infoproduc,cantiproducto) values
+('B01','2021-02-23','Paquete de Verduras','50lb'),('B02', '2021-03-01', 'Paquete de Pollo','20lb'),
+('B03', '2021-01-13', 'Paquete de Especias','8lb'),('B04','2021-02-10', 'Paquete de Condimentos','7lb'),
+('B05','2021-01-20', 'Paquete de Carne','12lb'),('B06','2021-02-22', 'Paquete de Frejoles','30lb');
+
+insert into combo(codicombo, nomcombo, porciocombo, preciocombo) values
+('CB01','Machappy','4','6'),('CB02','Machappy','4','6'),
+('CB03','Minimac','2','3'),('CB04','Machappy','4','6'),
+('CB05','Megamac','9','10'),('CB06','Minimac','2','3');
+
+insert into camarero(ceducamare,nomcamare,telecamare,experiencamare) values
+('1346314341','Mero Zambrano Guido','45453677','Camarero Experto'),('1313567653','Mera Castillo Pedro','66324710','Camarero en Sala'),
+('1320554543','Holguin Orlando Ronny','55310883','Camarero Veterano'),('1315557509','Menendez Macias Laura','34156722','Camarero Experto'),
+('1304535244','Velez Calderon Cristian','54131098','Camarero en Sala'),('1308780543','Mora Zambrano Hugo','50347869','Camarero Experto');
+
+insert into cliente(ceducliente,nomcliente,telecliente,correocliente,direccliente) values
+('1315614230','Zambrano Paz Oswaldo','451567500','zampazows @gmail.com','Calle 101 Av 21'),('1305949656','Macias Mero Catalina','55414103','macimercata@gmail.com','Calle 11 Av 3'),
+('1315578393','Gutierrez Alvarado Marcelo','54465299','gutualvamar@gmail.com','Calle 160 Av 100'),('1305629500','Hidalgo Zambrano Rogelio','54133879','hidazamro@gmail.com','Calle 120 Av Roca'),
+('1305949104','Macias Velez Cristina','45620900','macivecris@gmail.com','Calle Miranda Av 12'),('1314141049','Rodriguez Reyes Edgar','59131145','rodriredgar@gmail.com','Calle 45 Av 24');
+
+
+insert into mesas(codimesa, ceducamarefk, estadomesa, asientosmesa) values
+('M01','1346314341','Disponible','5'),('M02', '1320554543', '','6'),
+('M03','1346314341','Disponible','5'),('M04','1320554543', 'Disponible','5'),
+('M05','1315557509', 'No disponible','6'),('M06','1315557509', 'Disponible','5');
+
+
+insert into factura(numfactu,ceduclientefk,verififactura, fechafactu,totalfactu,descufactu,estadofactu) values
+('F01', '1315614230','No','2021-03-11','160.00','0.50','Entregado'),('F02','1315614230','Verificada','2021-04-01','200.00','0.50','Entregado'),
+('F03', '1305949104','Verificada','2021-03-05','180.00','0.50','Entregado'),('F04','1305949104','No','2021-02-02','180.00','0.50','Entregado'),
+('F05','1315614230','Verificada','2021-01-05','120.00','0.50','Entregado'),('F06','1314141049','Verificada','2021-03-15','140.00','0.50','Sin entregar');
+
+insert into reservamesa(codiresermesa, ceduclientefk,codimesafk,fecharesermesa,observaresermesa,estadoresermesa,ocuparesermesa, precioreserva,propinareserva) values
+('RV1', '1315614230','M01','2021-03-21','Elegante','Buen estado','No','50','2'),('RV2', '1305949104','M01','2021-05-01','Confortable','Buen estado','Si','50','1'),
+('RV3', '1315614230','M02','2021-10-01','Confortable','Buen estado','Si','50','5'),('RV4', '1305949104','M03','2021-04-20','Elegante','Renovada','Si','60','1'),
+('RV5', '1315614230','M01','2021-06-15','Elegante','Buen estado','No','50','2'),('RV6', '1314141049','M05','2021-03-21','Elegante','Renovada','Si','60','5');
+
+insert into alimentos(codialimentos,ceducheffk,codibodegafk,aliutilizado,porcionemplea) values
+('A01', '1353534664','B01','Tomates','30%'),('A02', '1310604934', 'B02','Pechuga','10%'),
+('A03', '1353534664','B01','Lechuga','50%'),('A04', '1310604934', 'B02','Alitas','60%'),
+('A05', '1304649942', 'B05','Carne Roja','40%'),('A06', '1353534664', 'B05','Carne Cove','40%');
+
+insert into platos(codiplato,ceducamarefk,codicombofk,ceducheffk,nomplato,caracteplato,precioplato,estadoplato,producirprecio) values
+('P01', '1346314341','CB01','1304649942','Asado de Pollo','Pollo con arroz y menestra','10','Disponible','20'),('P02', '1346314341', 'CB02','1315609300','Carne Asada','Carne con arroz','12','No disponible','30'),
+('P03', '1346314341','CB01','1304649942','Crema de tomate','Tomate cremoso','4','No Disponible','15'),('P04', '1315557509', 'CB02','1315609300','Asado de Pollo','Pollo con arroz y menestra','10','Disponible','20'),
+('P05', '1315557509', 'CB04','1353534664','Asado de Pollo','Pollo con arroz y menestra','10','Disponible','20'),('P06', '1308780543', 'CB04','1353534664','Asado de Pollo','Pollo con arroz y menestra','10','Disponible','20');
+
+
+
+insert into detafactura(codiplatofk,numfactufk,canti,precio, subtotal,estadofactu) values
+('P01', 'F01', '1','150','20','Servido'),('P03', 'F01', '1','150','20','Servido'),
+('P01', 'F03', '2','40','20','No servido'),('P03', 'F03', '3','40','20','Servido'),
+('P02', 'F05', '2','120','40','Servido'),('P02', 'F05', '5','120','40','No servido');
